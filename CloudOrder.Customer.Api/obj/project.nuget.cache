@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "ssHXe6cf78s=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ankishar\\Source\\repos\\CloudOrder\\CloudOrder.Customer.Api\\CloudOrder.Customer.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ankishar\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\azure.data.tables\\12.11.0\\azure.data.tables.12.11.0.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.2\\microsoft.aspnetcore.openapi.10.0.2.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\system.clientmodel\\1.1.0\\system.clientmodel.1.1.0.nupkg.sha512",
+    "C:\\Users\\ankishar\\.nuget\\packages\\system.memory.data\\6.0.0\\system.memory.data.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,47 @@
+@host = http://localhost:5144
+@productId = {{Create.response.body.id}}
+
+### Create a new product
+# @name Create
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Wireless Mouse",
+  "imageUrl": "https://example.com/images/wireless-mouse.jpg",
+  "price": 29.99,
+  "stockLevel": 150
+}
+
+### Create another product
+POST {{host}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Mechanical Keyboard",
+  "imageUrl": "https://example.com/images/mechanical-keyboard.jpg",
+  "price": 89.99,
+  "stockLevel": 75
+}
+
+### Get all products
+GET {{host}}/api/products
+Accept: application/json
+
+### Get product by ID (uses ID from Create response)
+GET {{host}}/api/products/{{productId}}
+Accept: application/json
+
+### Get product by specific ID
+GET {{host}}/api/products/00000000-0000-0000-0000-000000000000
+Accept: application/json
+
+### Update stock level
+PATCH {{host}}/api/products/{{productId}}/stock
+Content-Type: application/json
+
+{
+  "stockLevel": 200
+}
+
+###

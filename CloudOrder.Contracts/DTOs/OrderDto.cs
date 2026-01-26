@@ -1,0 +1,25 @@
+namespace CloudOrder.Contracts.DTOs;
+
+public record OrderItemDto(
+    Guid ProductId,
+    int Quantity,
+    decimal Price
+);
+
+public record OrderDto(
+    Guid Id,
+    Guid CustomerId,
+    List<OrderItemDto> Items,
+    decimal Amount,
+    OrderStatus Status
+);
+
+public record CreateOrderRequest(
+    Guid CustomerId,
+    List<CreateOrderItemRequest> Items
+);
+
+public record CreateOrderItemRequest(
+    Guid ProductId,
+    int Quantity
+);

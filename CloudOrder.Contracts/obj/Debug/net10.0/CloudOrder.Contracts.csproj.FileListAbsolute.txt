@@ -1,0 +1,11 @@
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\bin\Debug\net10.0\CloudOrder.Contracts.deps.json
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\bin\Debug\net10.0\CloudOrder.Contracts.dll
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\bin\Debug\net10.0\CloudOrder.Contracts.pdb
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.AssemblyInfoInputs.cache
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.AssemblyInfo.cs
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.dll
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\refint\CloudOrder.Contracts.dll
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\CloudOrder.Contracts.pdb
+C:\Users\ankishar\Source\repos\CloudOrder\CloudOrder.Contracts\obj\Debug\net10.0\ref\CloudOrder.Contracts.dll

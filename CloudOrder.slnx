@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CloudOrder.Contracts/CloudOrder.Contracts.csproj" />
+  <Project Path="CloudOrder.Customer.Api/CloudOrder.Customer.Api.csproj" />
+  <Project Path="CloudOrder.Order.Api/CloudOrder.Order.Api.csproj" />
+  <Project Path="CloudOrder.Product.Api/CloudOrder.Product.Api.csproj" />
+</Solution>

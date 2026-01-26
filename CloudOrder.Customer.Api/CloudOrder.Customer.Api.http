@@ -1,0 +1,6 @@
+@CloudOrder.Customer.Api_HostAddress = http://localhost:5047
+
+GET {{CloudOrder.Customer.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
