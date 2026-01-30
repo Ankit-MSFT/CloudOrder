@@ -1,7 +1,7 @@
 using Azure;
 using Azure.Data.Tables;
 
-namespace CloudOrder.Customer.TableEntities;
+namespace CloudOrder.Customer.Storage;
 
 public class CustomerTableEntity : ITableEntity
 {

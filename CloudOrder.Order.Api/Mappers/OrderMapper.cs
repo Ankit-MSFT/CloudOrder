@@ -2,7 +2,7 @@ using System.Text.Json;
 using CloudOrder.Contracts;
 using CloudOrder.Contracts.DTOs;
 using CloudOrder.Order.Domain;
-using CloudOrder.Order.TableEntities;
+using CloudOrder.Order.Storage;
 
 namespace CloudOrder.Order.Mappers;
 
@@ -40,18 +40,19 @@ public static class OrderMapper
         };
     }
 
-    public static OrderDto ToDto(Domain.Order order)
+    public static OrderDto ToDto(Domain.Order order, CustomerDto? customer = null)
     {
         var dtoItems = order.Items
             .Select(i => new OrderItemDto(i.ProductId, i.Quantity, i.Price))
             .ToList();
 
+        var customerDto = customer ?? new CustomerDto(order.CustomerId, "", null);
         return new OrderDto(
             order.Id,
-            order.CustomerId,
+            customerDto,
             dtoItems,
             order.Amount,
-            order.Status
+            order.Status.ToString()
         );
     }
 }

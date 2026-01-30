@@ -1,6 +1,6 @@
 using CloudOrder.Contracts.DTOs;
 using CloudOrder.Customer.Domain;
-using CloudOrder.Customer.TableEntities;
+using CloudOrder.Customer.Storage;
 
 namespace CloudOrder.Customer.Mappers;
 
@@ -30,7 +30,6 @@ public static class CustomerMapper
             PartitionKey = "CUSTOMER",
             RowKey = customer.Id.ToString(),
             Email = customer.Email,
-
             AddressLine1 = customer.Address.Line1,
             City = customer.Address.City,
             State = customer.Address.State,

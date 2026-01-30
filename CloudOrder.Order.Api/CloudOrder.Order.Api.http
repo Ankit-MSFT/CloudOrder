@@ -1,6 +1,67 @@
-@CloudOrder.Order.Api_HostAddress = http://localhost:5163
+@host = http://localhost:5163
+@orderId = {{Create.response.body.id}}
 
-GET {{CloudOrder.Order.Api_HostAddress}}/weatherforecast/
+### Create a new order (requires Product API to be running)
+# @name Create
+POST {{host}}/api/orders
+Content-Type: application/json
+
+{
+  "customerId": "b564901b-6497-4ce7-b8fd-f027fc6b1f6a",
+  "items": [
+    {
+      "productId": "8d1ca350-78d3-4ccd-859a-8db25e802fc1",
+      "quantity": 2
+    },
+    {
+      "productId": "eeba321e-742e-4021-82be-dc7f62b88f8d",
+      "quantity": 1
+    }
+  ]
+}
+
+### Get all orders
+GET {{host}}/api/orders
 Accept: application/json
+
+### Get orders by customer ID
+GET {{host}}/api/orders?customerId=b564901b-6497-4ce7-b8fd-f027fc6b1f6a
+Accept: application/json
+
+### Get order by ID (uses ID from Create response)
+GET {{host}}/api/orders/{{orderId}}
+Accept: application/json
+
+### Update order status to Confirmed
+PATCH {{host}}/api/orders/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": 1
+}
+
+### Update order status to Shipped
+PATCH {{host}}/api/orders/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": 2
+}
+
+### Update order status to Delivered
+PATCH {{host}}/api/orders/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": 3
+}
+
+### Update order status to Cancelled
+PATCH {{host}}/api/orders/{{orderId}}/status
+Content-Type: application/json
+
+{
+  "status": 4
+}
 
 ###

@@ -8,10 +8,10 @@ public record OrderItemDto(
 
 public record OrderDto(
     Guid Id,
-    Guid CustomerId,
+    CustomerDto Customer,
     List<OrderItemDto> Items,
     decimal Amount,
-    OrderStatus Status
+    string Status
 );
 
 public record CreateOrderRequest(
@@ -23,3 +23,5 @@ public record CreateOrderItemRequest(
     Guid ProductId,
     int Quantity
 );
+
+public record UpdateOrderStatusRequest(OrderStatus Status);

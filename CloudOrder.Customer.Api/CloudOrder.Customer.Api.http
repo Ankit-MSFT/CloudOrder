@@ -1,6 +1,58 @@
-@CloudOrder.Customer.Api_HostAddress = http://localhost:5047
+@host = http://localhost:5047
+@customerId = {{Create.response.body.id}}
 
-GET {{CloudOrder.Customer.Api_HostAddress}}/weatherforecast/
+### Create a new customer
+# @name Create
+POST {{host}}/api/customers
+Content-Type: application/json
+
+{
+  "email": "sherlock@bakerstreet.com",
+  "address": {
+    "line1": "221B Baker Street",
+    "city": "London",
+    "state": "London",
+    "country": "UK",
+    "postalCode": "NW1 6XE"
+  }
+}
+
+### Create another customer
+POST {{host}}/api/customers
+Content-Type: application/json
+
+{
+  "email": "watson@bakerstreet.com",
+  "address": {
+    "line1": "221B Baker Street",
+    "city": "London",
+    "state": "London",
+    "country": "UK",
+    "postalCode": "NW1 6XE"
+  }
+}
+
+### Get all customers
+GET {{host}}/api/customers
 Accept: application/json
+
+### Get customer by ID (uses ID from Create response)
+GET {{host}}/api/customers/{{customerId}}
+Accept: application/json
+
+### Update customer
+PUT {{host}}/api/customers/{{customerId}}
+Content-Type: application/json
+
+{
+  "email": "sherlock.holmes@bakerstreet.com",
+  "address": {
+    "line1": "221B Baker Street",
+    "city": "London",
+    "state": "Greater London",
+    "country": "United Kingdom",
+    "postalCode": "NW1 6XE"
+  }
+}
 
 ###
