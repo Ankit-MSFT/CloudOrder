@@ -8,7 +8,7 @@ public record OrderItemDto(
 
 public record OrderDto(
     Guid Id,
-    CustomerDto Customer,
+    Guid CustomerId,
     List<OrderItemDto> Items,
     decimal Amount,
     string Status

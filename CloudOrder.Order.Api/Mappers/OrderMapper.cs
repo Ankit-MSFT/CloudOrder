@@ -40,16 +40,15 @@ public static class OrderMapper
         };
     }
 
-    public static OrderDto ToDto(Domain.Order order, CustomerDto? customer = null)
+    public static OrderDto ToDto(Domain.Order order)
     {
         var dtoItems = order.Items
             .Select(i => new OrderItemDto(i.ProductId, i.Quantity, i.Price))
             .ToList();
 
-        var customerDto = customer ?? new CustomerDto(order.CustomerId, "", null);
         return new OrderDto(
             order.Id,
-            customerDto,
+            order.CustomerId,
             dtoItems,
             order.Amount,
             order.Status.ToString()

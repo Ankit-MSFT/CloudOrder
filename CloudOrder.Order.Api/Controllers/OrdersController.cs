@@ -13,13 +13,11 @@ public class OrdersController : ControllerBase
 {
     private readonly IOrderRepository _repository;
     private readonly HttpClient _productClient;
-    private readonly HttpClient _customerClient;
 
     public OrdersController(IOrderRepository repository, IHttpClientFactory httpClientFactory)
     {
         _repository = repository;
         _productClient = httpClientFactory.CreateClient("ProductApi");
-        _customerClient = httpClientFactory.CreateClient("CustomerApi");
     }
 
     [HttpPost]
@@ -27,10 +25,6 @@ public class OrdersController : ControllerBase
     {
         var orderItems = new List<OrderItem>();
         decimal totalAmount = 0;
-
-        var customerResponse = await _customerClient.GetAsync($"api/customers/{request.CustomerId}");
-        if (!customerResponse.IsSuccessStatusCode)
-            return BadRequest($"Customer {request.CustomerId} not found");
 
         // Fetch product prices and build order items
         foreach (var item in request.Items)
@@ -81,28 +75,16 @@ public class OrdersController : ControllerBase
         if (order is null)
             return NotFound();
 
-        var customerResponse = await _customerClient.GetAsync($"api/customers/{order.CustomerId}");
-        CustomerDto? customerDto = null;
-        if (customerResponse.IsSuccessStatusCode)
-        {
-            customerDto = await customerResponse.Content.ReadFromJsonAsync<CustomerDto>();
-        }
-
-        return Ok(OrderMapper.ToDto(order, customerDto));
+        return Ok(OrderMapper.ToDto(order));
     }
 
     [HttpGet]
     public async Task<IActionResult> GetAll([FromQuery] string? customerId = null)
     {
         IReadOnlyList<Domain.Order> orders;
-        CustomerDto? customerDto = null;
 
         if (!string.IsNullOrEmpty(customerId))
         {
-            var customerResponse = await _customerClient.GetAsync($"api/customers/{customerId}");
-            if (!customerResponse.IsSuccessStatusCode)
-                return BadRequest($"Customer {customerId} not found");
-
             orders = await _repository.GetByCustomerIdAsync(customerId);
         }
         else
