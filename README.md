@@ -128,8 +128,8 @@ This design optimizes common query patterns and keeps storage simple for v1.
 
 This repository accompanies a blog series that documents the architecture and design decisions behind CloudOrder.
 
-* Part 1A – [Architecture and domain design](https://www.azuretechinsights.com/2026/01/designing-microservices-hands-on.html)
-* Part 1B – Building APIs locally with Azure Table Storage
+* Part 1 – [Architecture and domain design](https://www.azuretechinsights.com/2026/01/designing-microservices-hands-on.html)
+* Part 2 – [Building APIs locally with Azure Table Storage](https://www.azuretechinsights.com/2026/01/designing-microservices-hands-on_30.html)
 
 (Blog links will be added as the series progresses.)
 
